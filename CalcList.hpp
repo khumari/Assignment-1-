@@ -5,16 +5,25 @@
 #include <string>
 #include "CalcListInterface.hpp"
 
+typedef struct Node
+{
+    FUNCTIONS opr;
+    double vaule;
+    Node *next;
+} Node;
+
 class CalcList : public CalcListInterface
 {
 private:
     double runTotal;
+    Node *head;
 
 public:
     //constructor
     CalcList()
     {
         runTotal = 0;
+        head = nullptr;
     }
 
     double total() const;
