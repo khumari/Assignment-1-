@@ -8,11 +8,13 @@
 class CalcList : public CalcListInterface
 {
 private:
+    double runTotal;
+
 public:
     //constructor
     CalcList()
     {
-        //
+        runTotal = 0;
     }
 
     double total() const;
