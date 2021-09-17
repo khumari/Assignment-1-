@@ -1,18 +1,18 @@
 #include "CalcList.hpp"
 
-double total() const
+double CalcList::total() const
 {
     return 0.0;
 }
 
-void newOperation(const FUNCTIONS func, const double operand)
+void CalcList::newOperation(const FUNCTIONS func, const double operand)
 {
 }
 
-void removeLastOperation()
+void CalcList::removeLastOperation()
 {
 }
-std::string toString(unsigned short precision) const
+std::string CalcList::toString(unsigned short precision) const
 {
 
     return "";

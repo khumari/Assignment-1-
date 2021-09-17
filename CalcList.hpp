@@ -15,10 +15,10 @@ public:
         //
     }
 
-    double total() const = 0;
-    void newOperation(const FUNCTIONS func, const double operand) = 0;
-    void removeLastOperation() = 0;
-    std::string toString(unsigned short precision) const = 0;
+    double total() const;
+    void newOperation(const FUNCTIONS func, const double operand);
+    void removeLastOperation();
+    std::string toString(unsigned short precision) const;
 
     //Destructor , should deallocate all memeory from linked
 };
