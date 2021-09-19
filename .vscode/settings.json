@@ -1,3 +1,10 @@
 {
+<<<<<<< HEAD
     "C_Cpp.errorSquiggles": "Disabled"
 }
+=======
+  "files.associations": {
+    "__nullptr": "cpp"
+  }
+}
+>>>>>>> cfd540a86c9a86ebbc36e7e108a0574217634586
