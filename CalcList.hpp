@@ -32,8 +32,11 @@ public:
     std::string toString(unsigned short precision) const;
 
     void storeOpr(const FUNCTIONS func, const double operand);
-
+    void reverseLast();
+    void applyOp(const FUNCTIONS func, const double operand);
+    bool deallocateLast();
     //Destructor , should deallocate all memeory from linked
+    ~CalcList();
 };
 
 #endif
