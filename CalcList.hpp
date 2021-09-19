@@ -53,7 +53,7 @@ private:
     Node* head;
 
 public:
-    //constructor
+    //constructor for Calculator
     CalcList()
     {
         runTotal = 0;
