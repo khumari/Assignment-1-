@@ -5,7 +5,6 @@
 #include <string>
 #include "CalcListInterface.hpp"
 
-<<<<<<< HEAD
 typedef enum { SUBTRACTION, ADDITION, MULTIPLICATION, DIVISION } FUNCTIONS;
 //the enum contains the arithmetic functions needed for the arithmetic operations.
 //typedef struct Node
@@ -38,7 +37,6 @@ class CalcList{
         void newOperation(const FUNCTIONS func, const double operand);
         void removeLastOperation();
         std::string toString(unsigned short precision) const;
-=======
 typedef struct Node
 {
     FUNCTIONS opr;
@@ -64,7 +62,6 @@ public:
     void newOperation(const FUNCTIONS func, const double operand);
     void removeLastOperation();
     std::string toString(unsigned short precision) const;
->>>>>>> cfd540a86c9a86ebbc36e7e108a0574217634586
 
     void storeOpr(const FUNCTIONS func, const double operand);
     void reverseLast();
