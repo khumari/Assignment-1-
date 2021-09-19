@@ -5,33 +5,41 @@
 #include <string>
 #include "CalcListInterface.hpp"
 
-typedef struct Node
-{
-    FUNCTIONS opr;
-    double vaule;
-    Node *next;
-} Node;
+typedef enum { SUBTRACTION, ADDITION, MULTIPLICATION, DIVISION } FUNCTIONS;
+//the enum contains the arithmetic functions needed for the arithmetic operations.
+//typedef struct Node
 
-class CalcList : public CalcListInterface
-{
-private:
-    double runTotal;
-    Node *head;
+class Node {
+    private:
+        FUNCTIONS opr;
+        double vaule;
+        Node *next; //next node in linked list
+        Node *prev; //previous node
+        friend class CalcList; 
+}     
 
-public:
-    //constructor
-    CalcList()
-    {
-        runTotal = 0;
-        head = nullptr;
-    }
+class CalcList{
 
-    double total() const;
-    void newOperation(const FUNCTIONS func, const double operand);
-    void removeLastOperation();
-    std::string toString(unsigned short precision) const;
+    private:
+        double runTotal;  //public CalcListInterface
+        Node *head;       
+        Node *tail;
+
+    public:
+        //constructor
+        CalcList()
+        {
+            runTotal = 0;
+            head = nullptr;
+        }
+
+        double total() const;
+        void newOperation(const FUNCTIONS func, const double operand);
+        void removeLastOperation();
+        std::string toString(unsigned short precision) const;
 
     //Destructor , should deallocate all memeory from linked
 };
+
 
 #endif
