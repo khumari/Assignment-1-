@@ -16,6 +16,7 @@ class CalcList : public CalcListInterface
 {
 private:
     double runTotal;
+    double prevRunningTotal;
     Node *head;
 
 public:
