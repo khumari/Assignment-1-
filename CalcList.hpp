@@ -22,21 +22,23 @@ class CalcList{
 
     private:
         double runTotal;  //public CalcListInterface
-        Node *head;       
-        Node *tail;
+        Node* head;       
+        Node* tail;
 
     public:
         //constructor
-        CalcList()
-        {
-            runTotal = 0;
-            head = nullptr;
-        }
-
+        CalcList();
         double total() const;
         void newOperation(const FUNCTIONS func, const double operand);
         void removeLastOperation();
         std::string toString(unsigned short precision) const;
+        void storeOpr(const FUNCTIONS func, const double operand);
+        void reverseLast();
+        void applyOp(const FUNCTIONS func, const double operand);
+        bool deallocateLast();
+        //Destructor , should deallocate all memeory from linked
+        ~CalcList();
+}        
 typedef struct Node
 {
     FUNCTIONS opr;
@@ -48,7 +50,7 @@ class CalcList : public CalcListInterface
 {
 private:
     double runTotal;
-    Node *head;
+    Node* head;
 
 public:
     //constructor

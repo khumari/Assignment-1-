@@ -1,5 +1,14 @@
 #include "CalcList.hpp"
 
+CalcList::CalcList()
+{
+    Calctotal = 0.0;
+    head = new func;
+    tail = new func;
+    head->next = tail;
+    tail->prev = head;
+    head->Totalatstep = 0.0;
+}
 double CalcList::total() const
 {
     //we have access to the member variable - atribute total
@@ -85,8 +94,40 @@ void CalcList::applyOp(const FUNCTIONS func, const double operand)
 
 std::string CalcList::toString(unsigned short precision) const
 {
-    return "Hello World!";
+    std::stringstream result;
+
+    int Numsteps = 0;
+
+    for (Node* func = tail->prev; func != head; func = func->prev)
+    {
+        Numsteps++; //Number of steps for final string.
+    }    
+    for (Node* func = tail->prev; func != head; func = func->prev)
+    {
+        std::string funcOp = "";
+        switch (func->function)
+        {
+            case ADDITION:
+                funcOp = "+";
+                break;
+            case MULTIPLICATION:
+                funcOp = "*";
+                break;
+            case SUBTRACTION:
+                funcOp = "-";
+                break;
+            case DIVISION:
+                funcOp = "/";
+                break;            
+        }
+        result << std::fixed << std::setprecision(precision) << Numsteps << ": " << func->prev->runTotal << funcOp << func->operand << "=" << func->Totalatstep << "\n";
+        Numsteps--;
+    }
+
+
+
 }
+
 
 bool CalcList::deallocateLast()
 {
