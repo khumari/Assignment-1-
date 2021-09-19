@@ -121,7 +121,7 @@ std::string CalcList::toString(unsigned short precision) const
                 break;            
         }
         result << std::fixed << std::setprecision(precision) << Numsteps << ": " << func->prev->runTotal << funcOp << func->operand << "=" << func->Totalatstep << "\n";
-        Numsteps--;
+        Numsteps--; //We start from the last step so that we can decrement it with each iteration.
     }
 
 
