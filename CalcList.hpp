@@ -8,7 +8,7 @@
 typedef struct Node
 {
     FUNCTIONS opr;
-    double vaule;
+    double value;
     Node *next;
 } Node;
 
@@ -30,6 +30,8 @@ public:
     void newOperation(const FUNCTIONS func, const double operand);
     void removeLastOperation();
     std::string toString(unsigned short precision) const;
+
+    void storeOpr(const FUNCTIONS func, const double operand);
 
     //Destructor , should deallocate all memeory from linked
 };
