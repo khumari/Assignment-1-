@@ -23,8 +23,9 @@ public:
     //constructor for Calculator
     CalcList()
     {
-        runTotal = 0;
+        runTotal = 0.0;
         head = nullptr;
+        prevRunningTotal = 0.0;
     }
 
     double total() const;

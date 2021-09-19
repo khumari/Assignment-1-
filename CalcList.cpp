@@ -54,6 +54,13 @@ void CalcList::reverseLast()
     FUNCTIONS lastOp = head->opr;
     FUNCTIONS inverse;
 
+    //if last op is * 0 then we need to put the prev to tal to running total
+    if ((lastOp == MULTIPLICATION) && (head->value == 0))
+    {
+        runTotal = prevRunningTotal;
+        return;
+    }
+
     //if conditional to get the reverse operation. maybe put it int a reve
     if (lastOp == ADDITION)
         inverse = SUBTRACTION;
@@ -70,6 +77,8 @@ void CalcList::reverseLast()
 }
 void CalcList::applyOp(const FUNCTIONS func, const double operand)
 {
+    prevRunningTotal = runTotal;
+
     if (func == ADDITION)
         runTotal += operand;
     else if (func == SUBTRACTION)
